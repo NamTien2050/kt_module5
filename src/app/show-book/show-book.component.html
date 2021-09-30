@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>Show books</h2>
+  <a type="button" class="float-right btn btn btn-success" routerLink="/create">Create</a>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>number</th>
+      <th>title</th>
+      <th>author</th>
+      <th>description</th>
+    </tr>
+    <tr *ngFor="let b of books">
+      <td>{{b.id}}</td>
+      <td>{{b.title}}</td>
+      <td>{{b.author}}</td>
+      <td>{{b.description}}</td>
+      <td>
+        <button type="button" class="btn btn-warning" [routerLink]="['/edit/',b.id]">Edit</button>
+      </td>
+      <td>
+        <a type="button" class="btn btn-danger" [routerLink]="['/delete/',b.id]">Delete</a>
+      </td>
+    </tr>
+    </thead>
+
+  </table>
+</div>
+
+
